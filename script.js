@@ -1,5 +1,21 @@
 function minDate(dates) {
-  //write you code here
+  // Initialize the minimum date as the first date in the array
+  let minDateStr = dates[0];
+  let minDateObj = new Date(minDateStr);
+
+  // Iterate over the rest of the dates
+  for (let i = 1; i < dates.length; i++) {
+    let currentDateStr = dates[i];
+    let currentDateObj = new Date(currentDateStr);
+
+    // Compare the current date with the minimum date
+    if (currentDateObj < minDateObj) {
+      minDateStr = currentDateStr;
+      minDateObj = currentDateObj;
+    }
+  }
+
+  return minDateStr;
 }
 
 // Do not change the code
